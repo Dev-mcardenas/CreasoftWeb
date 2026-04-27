@@ -8,10 +8,26 @@
   <link href="https://fonts.cdnfonts.com/css/neo-sans-pro" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/x-icon" href="./img/favicon.ico" />
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-P79WHMLL');</script>
+  <!-- End Google Tag Manager -->
+   
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P79WHMLL" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 </head>
 
 <body>
-  <header class="topbar">
+  <header class="topbar" id="inicio">
     <div class="container">
       <img src="img/Logo_creasoft.png" alt="Creasoft" class="brand-logo" />
     </div>
@@ -46,7 +62,7 @@
         </section>
 
         <!-- Why Choose Us Section (Split Background) -->
-        <section class="why-us-area">
+        <section class="why-us-area" id="servicios">
           <h2 class="section-title">¿Por qué elegirnos para desarrollar tu software?</h2>
 
           <div class="why-us-grid">
@@ -212,18 +228,20 @@
             <h2>Solicita una asesoría gratuita</h2>
             <p>Déjanos tus datos y te contactamos en breve</p>
 
-            <form>
+            <form id="contactForm">
               <div class="form-group">
-                <input type="text" placeholder="Nombres y apellidos" required id="name" />
+                <input type="text" placeholder="Nombres y apellidos" required id="name" maxlength="50"
+                  pattern="^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+$" title="Solo se permiten letras y espacios" />
               </div>
               <div class="form-group">
-                <input type="text" placeholder="Empresa" required id="company" />
+                <input type="text" placeholder="Empresa" required id="company" maxlength="60" />
               </div>
               <div class="form-group">
-                <input type="email" placeholder="Correo electrónico" required id="email" />
+                <input type="email" placeholder="Correo electrónico" required id="email" maxlength="100" />
               </div>
               <div class="form-group">
-                <input type="tel" placeholder="Número de celular" required id="phone" />
+                <input type="tel" placeholder="Número de celular" required id="phone" maxlength="15"
+                  pattern="[0-9]{9,15}" title="Ingresa un número válido (mínimo 9 dígitos)" />
               </div>
 
               <div class="form-group">
@@ -236,10 +254,12 @@
               </div>
 
               <div class="form-group">
-                <textarea placeholder="¿En qué podemos ayudarte?" rows="3" required id="message"></textarea>
+                <textarea placeholder="¿En qué podemos ayudarte?" rows="3" required id="message"
+                  maxlength="500"></textarea>
               </div>
 
-              <button type="submit" class="btn-submit">SOLICITAR ASESORÍA</button>
+              <button type="submit" class="btn-submit" id="submitBtn">SOLICITAR ASESORÍA</button>
+              <div id="formFeedback" class="form-feedback"></div>
             </form>
           </div>
         </div>
@@ -248,7 +268,7 @@
   </main>
 
   <!-- Projects Section (Full Width) -->
-  <section class="projects-section">
+  <section class="projects-section" id="proyectos">
     <div class="projects-container">
       <h2 class="section-title">Nuestros proyectos</h2>
 
@@ -425,10 +445,10 @@
         <div class="footer-col">
           <h4>Secciones</h4>
           <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Servicios</a></li>
-            <li><a href="#">Proyectos</a></li>
-            <li><a href="#">Contáctanos</a></li>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#inicio">Contáctanos</a></li>
           </ul>
         </div>
 
@@ -437,9 +457,9 @@
           <h4>Contáctenos</h4>
           <ul class="contact-list">
             <li><i class="fa-solid fa-location-dot"></i> Lima, Perú</li>
-            <li><i class="fa-solid fa-phone"></i> +51 987 970 406</li>
-            <li><i class="fa-solid fa-envelope"></i> contacto@creasoft.pe</li>
-            <li><i class="fa-solid fa-globe"></i> https://creasoft.com.pe/</li>
+            <li><i class="fa-solid fa-phone"></i> <a href="tel:+51987970406">+51 987 970 406</a></li>
+            <li><i class="fa-solid fa-envelope"></i> <a href="mailto:contacto@creasoft.pe">contacto@creasoft.pe</a></li>
+            <li><i class="fa-solid fa-globe"></i> <a href="https://creasoft.com.pe/" target="_blank" rel="noopener noreferrer">https://creasoft.com.pe/</a></li>
           </ul>
         </div>
 
@@ -447,9 +467,9 @@
         <div class="footer-col social-col">
           <h4>Síguenos</h4>
           <div class="social-links">
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://www.facebook.com/Creasoft.pe" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://x.com/creasoft_peru" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.linkedin.com/company/creasoft-per%C3%BA/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
           </div>
           <p class="copyright">
             © 2026 CREASOFT. <br />
@@ -459,6 +479,51 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const btn = document.getElementById('submitBtn');
+      const feedback = document.getElementById('formFeedback');
+
+      // Simple visual feedback for loading
+      const originalText = btn.innerText;
+      btn.innerText = 'ENVIANDO...';
+      btn.disabled = true;
+
+      // Simulate form submission
+      setTimeout(() => {
+        btn.innerText = originalText;
+        btn.disabled = false;
+
+        // Show success message
+        feedback.innerText = '¡Gracias! Tu solicitud ha sido enviada con éxito. Te contactaremos pronto.';
+        feedback.className = 'form-feedback success';
+
+        // Clear form
+        e.target.reset();
+
+        // Remove message after 5 seconds
+        setTimeout(() => {
+          feedback.innerText = '';
+          feedback.className = 'form-feedback';
+        }, 5000);
+      }, 1500);
+    });
+
+    // Optional: Real-time validation for Name to prevent numbers while typing
+    document.getElementById('name').addEventListener('input', function (e) {
+      const regex = /[^a-zA-ZñÑáéíóúÁÉÍÓÚ\s]/g;
+      if (regex.test(this.value)) {
+        this.value = this.value.replace(regex, '');
+      }
+    });
+
+    // Optional: Only numbers for Phone
+    document.getElementById('phone').addEventListener('input', function (e) {
+      this.value = this.value.replace(/[^0-9]/g, '');
+    });
+  </script>
 </body>
 
 </html>

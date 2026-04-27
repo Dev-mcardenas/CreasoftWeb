@@ -9,6 +9,10 @@
   --shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -294,7 +298,7 @@ body {
 .hero-form-card {
   background: var(--white);
   border-radius: 24px;
-  padding: 35px 30px;
+  padding: 15px 30px;
   box-shadow: 0 40px 80px rgba(0, 0, 0, 0.08);
   max-width: 600px;
   width: 90%;
@@ -637,7 +641,7 @@ body {
 /* Projects Section */
 .projects-section {
   background: var(--white);
-  padding: 100px 0 120px;
+  padding: 60px 0 120px;
   width: 100%;
 }
 
@@ -1177,4 +1181,27 @@ body {
     max-width: 450px;
     height: 450px;
   }
+}
+
+/* Form Validation & Feedback */
+.hero-form-card input:focus:invalid,
+.hero-form-card textarea:focus:invalid {
+  border-color: #ff4d4d;
+  box-shadow: 0 0 5px rgba(255, 77, 77, 0.2);
+}
+
+.form-feedback {
+  margin-top: 15px;
+  font-size: 14px;
+  text-align: center;
+  min-height: 20px;
+  transition: all 0.3s ease;
+}
+
+.form-feedback.success {
+  color: #28a745;
+  background: #e8f5e9;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #c8e6c9;
 }
