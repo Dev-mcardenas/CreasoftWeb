@@ -545,7 +545,7 @@ body {
   font-size: 18px;
   color: var(--text-gray);
   max-width: 700px;
-  margin: 0 auto 80px;
+  margin: 0 auto 30px;
   line-height: 1.6;
 }
 
@@ -670,8 +670,8 @@ body {
     height: auto;
     width: 100%;
     text-align: center;
-    gap: 30px;
-    padding: 60px 30px 40px;
+    gap: 10px;
+    padding: 35px 15px 20px;
   }
 
   .process-content,
@@ -1516,7 +1516,8 @@ body {
 
   .process-content p {
     grid-column: 1;
-    font-size: 17px !important;
+    grid-row: 2; /* Explicit row */
+    font-size: 15px !important;
     line-height: 1.4;
     color: #555;
     margin: 0;
@@ -1524,6 +1525,7 @@ body {
 
   .process-visual {
     grid-column: 2;
+    grid-row: 2; /* Explicit row */
     width: 100px;
     height: auto;
   }
@@ -1549,10 +1551,12 @@ body {
 
   .process-item:nth-child(even) .process-visual {
     grid-column: 1;
+    grid-row: 2;
   }
 
   .process-item:nth-child(even) .process-content p {
     grid-column: 2;
+    grid-row: 2;
   }
 
   .process-item:nth-child(even) .process-badge {
@@ -1669,17 +1673,61 @@ body {
 
   .onboarding-area {
     padding: 60px 20px;
+    text-align: center;
+  }
+
+  .onboarding-area .section-title::after {
+    width: 140px !important; /* Shorter line for mobile */
+    height: 4px;
+    bottom: -10px;
   }
 
   .onboarding-steps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 10px;
+    padding-top: 30px;
   }
 
+  .step-item {
+    max-width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .step-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+
+  .step-number {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+
+  .step-item h3 {
+    font-size: 19px !important;
+    font-weight: 700;
+  }
+
+  .step-item p {
+    font-size: 15px !important;
+    line-height: 1.4;
+    max-width: 90%;
+    margin: 0 auto;
+    color: #444;
+  }
+  
+
   .step-arrow img {
-    transform: rotate(90deg);
-    /* Arrow points down in vertical layout */
-    width: 30px;
-    margin: 15px auto;
+    transform: none !important; /* Reset rotation if base image already points down or adjust as needed */
+    width: 28px;
+    margin: 10px auto;
+    opacity: 0.8;
   }
 
   /* Slider for Projects on Mobile */
