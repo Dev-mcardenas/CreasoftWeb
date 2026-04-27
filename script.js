@@ -1,23 +1,44 @@
 // Form Submission Logic
 document.getElementById('contactForm').addEventListener('submit', function (e) {
   e.preventDefault();
+  const form = e.target;
   const btn = document.getElementById('submitBtn');
   const feedback = document.getElementById('formFeedback');
   const originalText = btn.innerText;
+  
   btn.innerText = 'ENVIANDO...';
   btn.disabled = true;
 
-  setTimeout(() => {
-    btn.innerText = originalText;
+  const data = new FormData(form);
+
+  fetch(form.action, {
+    method: 'POST',
+    body: data,
+    headers: {
+      'Accept': 'application/json'
+    }
+  }).then(response => {
     btn.disabled = false;
-    feedback.innerText = '¡Gracias! Tu solicitud ha sido enviada con éxito. Te contactaremos pronto.';
-    feedback.className = 'form-feedback success';
-    e.target.reset();
-    setTimeout(() => {
-      feedback.innerText = '';
-      feedback.className = 'form-feedback';
-    }, 5000);
-  }, 1500);
+    btn.innerText = originalText;
+    
+    if (response.ok) {
+      feedback.innerText = '¡Gracias! Tu solicitud ha sido enviada con éxito. Te contactaremos pronto.';
+      feedback.className = 'form-feedback success';
+      form.reset();
+      setTimeout(() => {
+        feedback.innerText = '';
+        feedback.className = 'form-feedback';
+      }, 6000);
+    } else {
+      feedback.innerText = 'Hubo un error al enviar. Por favor, revisa tus datos e intenta nuevamente.';
+      feedback.className = 'form-feedback error';
+    }
+  }).catch(error => {
+    btn.disabled = false;
+    btn.innerText = originalText;
+    feedback.innerText = 'Error de conexión. Por favor, verifica tu internet e intenta de nuevo.';
+    feedback.className = 'form-feedback error';
+  });
 });
 
 // Input Filters
