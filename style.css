@@ -13,19 +13,20 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  font-family: 'Neo Sans Pro', sans-serif;
+  background: var(--yellow);
+  color: var(--text-dark);
+  line-height: 1.5;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-body {
-  font-family: 'Neo Sans Pro', sans-serif;
-  background: var(--yellow);
-  /* Set global background to yellow */
-  color: var(--text-dark);
-  line-height: 1.5;
-}
+/* Original body was here, merged above */
 
 .container {
   width: 100%;
@@ -61,17 +62,20 @@ body {
   width: 100%;
 }
 
-.content-column {
-  display: flex;
-  flex-direction: column;
+/* Grid Column assignments for Desktop */
+.hero-left-area, 
+.why-us-area, 
+.process-area, 
+.onboarding-area {
+  grid-column: 1;
 }
 
 .form-column {
+  grid-column: 2;
+  grid-row: 1 / 10; /* Spans multiple rows to allow sticky behavior next to content */
   background: var(--yellow);
-  /* Persistent yellow right column */
   position: relative;
   padding-right: 150px;
-  /* Right edge padding */
 }
 
 .sticky-wrapper {
@@ -293,6 +297,85 @@ body {
     transform: translateY(-15px);
   }
 }
+
+/* Base Composed Laptop Styles (Hidden on Desktop) */
+.composed-laptop-container {
+  display: none;
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  margin: 60px auto 40px;
+  z-index: 5;
+}
+
+.laptop-main {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.floating-card-hero {
+  position: absolute;
+  background: #FFF9E6; /* Light yellowish background to match cards */
+  border: 1px solid #FFEDBF;
+  padding: 8px 12px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  z-index: 10;
+  width: max-content;
+}
+
+.floating-card-hero .card-icon {
+  width: 28px;
+  height: 28px;
+  background: var(--yellow);
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.floating-card-hero .card-icon img {
+  width: 18px;
+  height: 18px;
+  filter: brightness(0) invert(1);
+}
+
+.floating-card-hero .card-text span {
+  font-size: 11px;
+  font-weight: 700;
+  color: #333;
+  line-height: 1;
+}
+
+.floating-card-hero .card-text small {
+  font-size: 10px;
+  color: #666;
+}
+
+/* Connector Lines */
+.connector-line {
+  position: absolute;
+  background: #BCC1C8;
+  height: 1px;
+  z-index: -1;
+}
+
+/* Positions for Mobile/Tablet */
+.card-tl { top: -20px; left: -30px; }
+.card-tr { top: 40px; right: -40px; }
+.card-bl { bottom: 40px; left: -40px; }
+.card-br { bottom: -10px; right: -30px; }
+
+/* Line Positions */
+.line-tl { width: 40px; top: 50%; right: -40px; transform: rotate(15deg); }
+.line-tr { width: 40px; top: 50%; left: -40px; transform: rotate(-15deg); }
+.line-bl { width: 40px; top: 50%; right: -40px; transform: rotate(-15deg); }
+.line-br { width: 40px; top: 50%; left: -40px; transform: rotate(15deg); }
 
 /* Form Card */
 .hero-form-card {
@@ -1204,4 +1287,335 @@ body {
   padding: 10px;
   border-radius: 8px;
   border: 1px solid #c8e6c9;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN (TABLET & MOBILE)
+   ========================================== */
+
+/* Tablet Breakpoint (max-width: 992px) - Standardizing some desktop behaviors */
+@media (max-width: 992px) {
+  .container {
+    padding: 0 40px;
+  }
+}
+
+/* Tablet Breakpoint (768px) */
+@media (max-width: 768px) {
+  .desktop-hidden-image {
+    display: none !important;
+  }
+  
+  .composed-laptop-container {
+    display: block;
+  }
+
+  /* Force full viewport constraint only in responsive modes */
+  html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    position: relative;
+  }
+
+  .layout-grid {
+    display: flex;
+    flex-direction: column;
+    width: 100% !important;
+    max-width: 100vw !important;
+  }
+
+  /* Reordering for Mobile/Tablet */
+  .hero-left-area   { order: 1 !important; }
+  .form-column       { order: 2 !important; }
+  .why-us-area       { order: 3 !important; }
+  .process-area      { order: 4 !important; }
+  .onboarding-area   { order: 5 !important; }
+
+  .brand-logo {
+    margin: 0 !important;
+    height: 40px;
+  }
+
+  /* Custom Mobile Typography */
+  .hero-title {
+    font-size: 26px !important;
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero-title .highlight {
+    font-size: 22px !important;
+    padding: 8px;
+    width: 100%;
+  }
+
+  .hero-copy {
+    font-size: 15px !important;
+    line-height: 1.4;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .section-title {
+    font-size: 24px !important;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .why-card h3, .process-item h3, .step-item h3 {
+    font-size: 18px !important;
+  }
+
+  .why-card p, .process-item p, .step-item p {
+    font-size: 14px !important;
+  }
+
+  .hero-text-content, .hero-copy, .hero-subcopy {
+    margin-left: 0;
+  }
+
+  .hero-left-area {
+    padding: 60px 20px;
+    min-height: auto;
+    text-align: center;
+    overflow-x: hidden;
+  }
+
+  .hero-copy {
+    font-size: 18px;
+    text-align: center; /* Ensure it's centered, not justified */
+    max-width: 90%;
+    margin: 0 auto 20px;
+  }
+
+  .hero-subcopy {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+
+  .form-column {
+    padding: 40px 20px;
+    padding-right: 0; /* Reset desktop side padding */
+    width: 100% !important;
+    max-width: 100% !important;
+    grid-column: auto !important; /* Reset grid positions */
+    grid-row: auto !important;
+  }
+
+  .hero-left-area, 
+  .why-us-area, 
+  .process-area, 
+  .onboarding-area {
+    width: 100% !important;
+    max-width: 100% !important;
+    grid-column: auto !important;
+  }
+
+  .why-us-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .process-area {
+    padding: 60px 40px;
+  }
+
+  .process-item {
+    flex-direction: column !important;
+    height: auto;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .process-content {
+    align-items: center !important;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .idea-flex {
+    flex-direction: column;
+    text-align: center;
+    gap: 60px;
+  }
+
+  .bg-arrow {
+    width: 200%;
+    bottom: -50px;
+  }
+}
+
+/* Mobile Breakpoint (480px) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .brand-logo {
+    margin: 0 auto;
+  }
+
+  .hero-title {
+    align-items: center;
+    text-align: center;
+    font-size: 28px;
+  }
+
+  .hero-title .highlight {
+    font-size: 24px;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .hero-copy {
+    font-size: 16px;
+    text-align: center;
+    max-width: 100%;
+    margin: 0 auto 20px;
+  }
+
+  .hero-copy br {
+    display: none;
+  }
+
+  .why-us-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .onboarding-area {
+    padding: 60px 20px;
+  }
+
+  .onboarding-steps {
+    gap: 10px;
+  }
+
+  .step-arrow img {
+    transform: rotate(90deg); /* Arrow points down in vertical layout */
+    width: 30px;
+    margin: 15px auto;
+  }
+
+  /* Slider for Projects on Mobile */
+  .projects-slider-wrapper {
+    overflow: hidden;
+    margin: 0 -20px;
+    padding: 0 20px;
+  }
+
+  .projects-grid {
+    display: flex;
+    grid-template-columns: none;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding-bottom: 20px;
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .projects-grid::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
+
+  .project-card {
+    min-width: 100%;
+    scroll-snap-align: start;
+    aspect-ratio: 1 / 1;
+  }
+
+  .slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border: 2px solid var(--yellow);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .dot.active {
+    background: var(--yellow);
+  }
+
+  .idea-section {
+    padding-top: 60px;
+  }
+
+  .idea-title {
+    font-size: 32px;
+  }
+
+  .idea-features {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .idea-features .divider {
+    display: none;
+  }
+
+  .visual-wrapper {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .contact-list li {
+    justify-content: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+}
+
+/* Specific adjustments for the composed hero visual on very small screens */
+@media (max-width: 480px) {
+  .composed-laptop-container {
+    max-width: 300px;
+    margin-top: 40px;
+  }
+
+  .floating-card-hero {
+    padding: 6px 10px;
+  }
+
+  .floating-card-hero .card-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .floating-card-hero .card-text span {
+    font-size: 10px;
+  }
+
+  /* Reduce negative margins further to prevent screen overflow */
+  .card-tl { left: 0; top: -30px; }
+  .card-tr { right: 0; top: 30px; }
+  .card-bl { left: 0; bottom: 30px; }
+  .card-br { right: 0; bottom: -20px; }
+
+  .composed-laptop-container {
+    max-width: 280px; /* Slightly smaller to fit cards better */
+    margin-top: 40px;
+  }
+
+  .connector-line {
+    display: none; 
+  }
 }

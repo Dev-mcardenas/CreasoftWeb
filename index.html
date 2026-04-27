@@ -35,9 +35,8 @@
 
   <main class="main-content-layout">
     <div class="layout-grid">
-      <!-- Left Column: Content Sections -->
-      <div class="content-column">
-        <!-- Hero Section -->
+      <!-- Sections and Form as siblings -->
+      <!-- Hero Section -->
         <section class="hero-left-area">
           <div class="hero-text-content">
             <h1 class="hero-title">
@@ -55,7 +54,38 @@
           </div>
 
           <div class="hero-visual">
-            <div class="laptop-container">
+            <!-- Composed structure for better responsive control -->
+            <div class="composed-laptop-container">
+              <img src="img/impulsa_empresa/laptop.png" alt="Laptop" class="laptop-main" />
+
+              <!-- Floating Cards -->
+              <div class="floating-card-hero card-tl">
+                <div class="card-icon"><img src="img/impulsa_empresa/acompañamiento.svg" alt="" /></div>
+                <div class="card-text"><span>Acompañamiento</span><br><small>continuo</small></div>
+                <div class="connector-line line-tl"></div>
+              </div>
+
+              <div class="floating-card-hero card-tr">
+                <div class="card-icon"><img src="img/impulsa_empresa/tecnologias.svg" alt="" /></div>
+                <div class="card-text"><span>Tecnologías</span><br><small>modernas y escalables</small></div>
+                <div class="connector-line line-tr"></div>
+              </div>
+
+              <div class="floating-card-hero card-bl">
+                <div class="card-icon"><img src="img/impulsa_empresa/seguridad.svg" alt="" /></div>
+                <div class="card-text"><span>Seguridad</span><br><small>en cada etapa</small></div>
+                <div class="connector-line line-bl"></div>
+              </div>
+
+              <div class="floating-card-hero card-br">
+                <div class="card-icon"><img src="img/impulsa_empresa/proyectos.svg" alt="" /></div>
+                <div class="card-text"><span>Proyectos</span><br><small>a la medida</small></div>
+                <div class="connector-line line-br"></div>
+              </div>
+            </div>
+
+            <!-- Fallback/Desktop original - Hidden on mobile if needed -->
+            <div class="laptop-container desktop-hidden-image">
               <img src="img/logo_central.png" alt="Soluciones Creasoft" class="laptop-img" />
             </div>
           </div>
@@ -219,7 +249,7 @@
             </div>
           </div>
         </section>
-      </div>
+        <!-- End of Sections -->
 
       <!-- Right Column: Sticky Form -->
       <aside class="form-column">
@@ -272,84 +302,94 @@
     <div class="projects-container">
       <h2 class="section-title">Nuestros proyectos</h2>
 
-      <div class="projects-grid">
-        <!-- Project 1 -->
-        <div class="project-card">
-          <img src="img/tenorio.png" alt="Tenorio" />
-          <div class="project-overlay">
-            <div class="overlay-content">
-              <h3>Tenorio</h3>
-              <div class="project-line"></div>
-              <p>Sistema de gestión financiera diseñado para optimizar pedidos y producción. Permitió a la empresa
-                incrementar su eficiencia, reduciendo tareas manuales y mejorando la toma de decisiones.</p>
+      <div class="projects-slider-wrapper">
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <div class="project-card">
+            <img src="img/tenorio.png" alt="Tenorio" />
+            <div class="project-overlay">
+              <div class="overlay-content">
+                <h3>Tenorio</h3>
+                <div class="project-line"></div>
+                <p>Sistema de gestión financiera diseñado para optimizar pedidos y producción. Permitió a la empresa
+                  incrementar su eficiencia, reduciendo tareas manuales y mejorando la toma de decisiones.</p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Project 2 -->
-        <div class="project-card">
-          <img src="img/obengroup.png" alt="Oben Group" />
-          <div class="project-overlay">
-            <div class="overlay-content">
-              <h3>Oben Group</h3>
-              <div class="project-line"></div>
-              <p>Desarrollo de sitio web corporativo para empresa líder en soluciones de empaque y materiales
-                industriales, optimizando la comunicación de su portafolio y fortaleciendo su presencia digital.</p>
+          <!-- Project 2 -->
+          <div class="project-card">
+            <img src="img/obengroup.png" alt="Oben Group" />
+            <div class="project-overlay">
+              <div class="overlay-content">
+                <h3>Oben Group</h3>
+                <div class="project-line"></div>
+                <p>Desarrollo de sitio web corporativo para empresa líder en soluciones de empaque y materiales
+                  industriales, optimizando la comunicación de su portafolio y fortaleciendo su presencia digital.</p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Project 3 -->
-        <div class="project-card">
-          <img src="img/vsgproyectos.png" alt="VSG Proyectos" />
-          <div class="project-overlay">
-            <div class="overlay-content">
-              <h3>VSG Proyectos</h3>
-              <div class="project-line"></div>
-              <p>Creación de sitio web corporativo para empresa constructora con amplia trayectoria, mejorando la
-                visibilidad de sus proyectos y su posicionamiento digital.</p>
+          <!-- Project 3 -->
+          <div class="project-card">
+            <img src="img/vsgproyectos.png" alt="VSG Proyectos" />
+            <div class="project-overlay">
+              <div class="overlay-content">
+                <h3>VSG Proyectos</h3>
+                <div class="project-line"></div>
+                <p>Creación de sitio web corporativo para empresa constructora con amplia trayectoria, mejorando la
+                  visibilidad de sus proyectos y su posicionamiento digital.</p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Project 4 -->
-        <div class="project-card">
-          <img src="img/amantani.png" alt="Amantani" />
-          <div class="project-overlay">
-            <div class="overlay-content">
-              <h3>Amantani</h3>
-              <div class="project-line"></div>
-              <p>Implementación de plataforma administrativa que permitió optimizar la gestión de producción, pedidos y
-                clientes, logrando mayor control y eficiencia operativa.</p>
+          <!-- Project 4 -->
+          <div class="project-card">
+            <img src="img/amantani.png" alt="Amantani" />
+            <div class="project-overlay">
+              <div class="overlay-content">
+                <h3>Amantani</h3>
+                <div class="project-line"></div>
+                <p>Implementación de plataforma administrativa que permitió optimizar la gestión de producción, pedidos y
+                  clientes, logrando mayor control y eficiencia operativa.</p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Project 5 -->
-        <div class="project-card">
-          <img src="img/gramat.png" alt="Gramat" />
-          <div class="project-overlay">
-            <div class="overlay-content">
-              <h3>Gramat</h3>
-              <div class="project-line"></div>
-              <p>Desarrollo de plataforma web y aplicación móvil para juego interactivo, enfocada en mejorar la
-                experiencia y engagement de los usuarios.</p>
+          <!-- Project 5 -->
+          <div class="project-card">
+            <img src="img/gramat.png" alt="Gramat" />
+            <div class="project-overlay">
+              <div class="overlay-content">
+                <h3>Gramat</h3>
+                <div class="project-line"></div>
+                <p>Desarrollo de plataforma web y aplicación móvil para juego interactivo, enfocada en mejorar la
+                  experiencia y engagement de los usuarios.</p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Project 6 -->
-        <div class="project-card">
-          <img src="img/enline.png" alt="Enline" />
-          <div class="project-overlay">
-            <div class="overlay-content">
-              <h3>Enline</h3>
-              <div class="project-line"></div>
-              <p>Desarrollo de plataforma administrativa para la gestión y monitoreo de operaciones de mantenimiento en
-                distribuidoras de energía, mejorando el control y la eficiencia operativa.</p>
+          <!-- Project 6 -->
+          <div class="project-card">
+            <img src="img/enline.png" alt="Enline" />
+            <div class="project-overlay">
+              <div class="overlay-content">
+                <h3>Enline</h3>
+                <div class="project-line"></div>
+                <p>Desarrollo de plataforma administrativa para la gestión y monitoreo de operaciones de mantenimiento en
+                  distribuidoras de energía, mejorando el control y la eficiencia operativa.</p>
+              </div>
             </div>
           </div>
         </div>
+      </div>
+      <div class="slider-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
       </div>
     </div>
   </section>
@@ -480,30 +520,21 @@
     </div>
   </footer>
   <script>
+    // Form Submission Logic
     document.getElementById('contactForm').addEventListener('submit', function (e) {
       e.preventDefault();
-
       const btn = document.getElementById('submitBtn');
       const feedback = document.getElementById('formFeedback');
-
-      // Simple visual feedback for loading
       const originalText = btn.innerText;
       btn.innerText = 'ENVIANDO...';
       btn.disabled = true;
 
-      // Simulate form submission
       setTimeout(() => {
         btn.innerText = originalText;
         btn.disabled = false;
-
-        // Show success message
         feedback.innerText = '¡Gracias! Tu solicitud ha sido enviada con éxito. Te contactaremos pronto.';
         feedback.className = 'form-feedback success';
-
-        // Clear form
         e.target.reset();
-
-        // Remove message after 5 seconds
         setTimeout(() => {
           feedback.innerText = '';
           feedback.className = 'form-feedback';
@@ -511,18 +542,35 @@
       }, 1500);
     });
 
-    // Optional: Real-time validation for Name to prevent numbers while typing
+    // Input Filters
     document.getElementById('name').addEventListener('input', function (e) {
-      const regex = /[^a-zA-ZñÑáéíóúÁÉÍÓÚ\s]/g;
-      if (regex.test(this.value)) {
-        this.value = this.value.replace(regex, '');
-      }
+      this.value = this.value.replace(/[^a-zA-ZñÑáéíóúÁÉÍÓÚ\s]/g, '');
     });
-
-    // Optional: Only numbers for Phone
     document.getElementById('phone').addEventListener('input', function (e) {
       this.value = this.value.replace(/[^0-9]/g, '');
     });
+
+    // Mobile Slider Logic
+    const slider = document.querySelector('.projects-grid');
+    const dots = document.querySelectorAll('.dot');
+    
+    if (slider && dots.length > 0) {
+      slider.addEventListener('scroll', () => {
+        const index = Math.round(slider.scrollLeft / slider.offsetWidth);
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('active', i === index);
+        });
+      });
+
+      dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+          slider.scrollTo({
+            left: i * slider.offsetWidth,
+            behavior: 'smooth'
+          });
+        });
+      });
+    }
   </script>
 </body>
 
