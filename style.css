@@ -144,7 +144,7 @@ body {
   bottom: -15px;
 }
 
-  /* Removed accidental desktop edit */
+/* Removed accidental desktop edit */
 
 .section-subtitle {
   text-align: center;
@@ -1502,7 +1502,8 @@ body {
   }
 
   .process-content {
-    display: contents; /* Makes h3 and p direct grid items */
+    display: contents;
+    /* Makes h3 and p direct grid items */
   }
 
   .process-item h3 {
@@ -1516,7 +1517,8 @@ body {
 
   .process-content p {
     grid-column: 1;
-    grid-row: 2; /* Explicit row */
+    grid-row: 2;
+    /* Explicit row */
     font-size: 15px !important;
     line-height: 1.4;
     color: #555;
@@ -1525,7 +1527,8 @@ body {
 
   .process-visual {
     grid-column: 2;
-    grid-row: 2; /* Explicit row */
+    grid-row: 2;
+    /* Explicit row */
     width: 100px;
     height: auto;
   }
@@ -1613,6 +1616,13 @@ body {
     border-radius: 7px;
   }
 
+  .card-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #2D2D2D;
+    line-height: 1.2;
+  }
+
   .hero-copy {
     font-size: 16px;
     text-align: center;
@@ -1627,7 +1637,8 @@ body {
   .why-us-grid {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center cards horizontally */
+    align-items: center;
+    /* Center cards horizontally */
     gap: 50px;
     padding-top: 40px;
     margin-left: 0;
@@ -1635,9 +1646,12 @@ body {
   }
 
   .why-card {
-    width: 95%; /* Take more width on smaller screens */
-    max-width: 380px; /* Slightly larger as requested */
-    padding: 40px 9px 30px; /* 15px side padding as requested */
+    width: 95%;
+    /* Take more width on smaller screens */
+    max-width: 380px;
+    /* Slightly larger as requested */
+    padding: 40px 9px 30px;
+    /* 15px side padding as requested */
     margin: 24px auto 0;
     border-radius: 15px;
   }
@@ -1666,10 +1680,18 @@ body {
   }
 
   .why-us-area .section-title::after {
-    width: 393px !important; /* Reduced width as requested for mobile */
+    width: 393px !important;
+    /* Reduced width as requested for mobile */
     height: 4px;
     bottom: -10px;
   }
+  .branding p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #FFFFFF;
+    opacity: 1;
+    margin-left: 0px;
+}
 
   .onboarding-area {
     padding: 60px 20px;
@@ -1677,7 +1699,8 @@ body {
   }
 
   .onboarding-area .section-title::after {
-    width: 140px !important; /* Shorter line for mobile */
+    width: 140px !important;
+    /* Shorter line for mobile */
     height: 4px;
     bottom: -10px;
   }
@@ -1721,10 +1744,11 @@ body {
     margin: 0 auto;
     color: #444;
   }
-  
+
 
   .step-arrow img {
-    transform: none !important; /* Reset rotation if base image already points down or adjust as needed */
+    transform: none !important;
+    /* Reset rotation if base image already points down or adjust as needed */
     width: 28px;
     margin: 10px auto;
     opacity: 0.8;
@@ -1780,41 +1804,203 @@ body {
   }
 
   .idea-section {
-    padding-top: 60px;
+    padding: 60px 0 0;
+  }
+
+  .idea-flex {
+    flex-direction: column;
+    text-align: left;
+    /* Left align text */
+    gap: 40px;
+    padding: 0 20px;
+  }
+
+  .idea-left {
+    margin-bottom: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Align items to the left */
   }
 
   .idea-title {
-    font-size: 32px;
+    font-size: 32px !important;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+
+  .idea-desc {
+    font-size: 16px !important;
+    font-weight: 600;
+    margin-bottom: 30px;
+    max-width: 100%;
+    text-align: left;
+    color: #333333;
   }
 
   .idea-features {
-    flex-direction: column;
+    display: grid !important;
+    grid-template-columns: 1fr 1px 1fr;
+    /* Add column for divider */
+    gap: 15px;
+    text-align: left;
+    margin-bottom: 40px;
+    width: 100%;
     align-items: center;
-    gap: 20px;
+  }
+
+  .feature-item {
+    gap: 8px;
+  }
+
+  .feature-item span {
+    font-size: 14px !important;
+    font-weight: 400;
+  }
+
+  .feature-item:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .feature-item:nth-child(2) {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .feature-item:nth-child(3) {
+    grid-column: 1 / span 3;
+    grid-row: 2;
+    margin-top: 10px;
   }
 
   .idea-features .divider {
-    display: none;
+    display: block !important;
+    width: 1px;
+    height: 35px;
+    background: #2D2D2D;
+    opacity: 0.50;
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: center;
+  }
+
+  .btn-solicitar {
+    width: 65%;
+    max-width: 100%;
+    padding: 15px;
+    font-size: 19px;
+    text-align: center;
+  }
+
+  .idea-right {
+    width: 88%;
+    padding-bottom: 12px;
+  }
+
+  .bg-arrow {
+    width: 150%;
+    /* Reduced size to fit better behind the monitor */
+    bottom: -15px;
+    opacity: 0.6;
+    /* Slight transparency for background feel */
   }
 
   .visual-wrapper {
     width: 100%;
-    height: auto;
+    max-width: 320px;
+    margin: 0 auto;
     aspect-ratio: 1;
   }
 
-  .footer-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 40px;
+  /* Manual adjustments for idea floating cards */
+  .floating-card-manual {
+    padding: 8px 12px;
+    border-radius: 10px;
+    gap: 8px;
   }
 
+  .floating-card-manual .card-title {
+    font-size: 10px !important;
+  }
+
+  .card-top-left {
+    top: -10%;
+    left: -8%;
+  }
+
+  .card-top-right {
+    top: 2%;
+    right: -5%;
+  }
+
+  .card-bottom {
+    bottom: 22;
+    left: 22%;
+    transform: translateX(-50%);
+    width: 56%;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* Side by side for Secciones and Contáctenos */
+    text-align: left;
+    gap: 20px 20px;
+  }
+
+  .footer-col:first-child {
+    grid-column: 1 / span 2;
+    margin-bottom: 10px;
+  }
+
+  .footer-logo {
+    margin-left: 0;
+    margin-right: auto;
+    height: 45px;
+  }
+
+  .footer-col p {
+    font-size: 16px !important;
+    text-align: left;
+    max-width: 100%;
+  }
+
+  .footer-col h4 {
+    font-size: 18px !important;
+    color: var(--yellow);
+    margin-bottom: 15px;
+    text-align: left;
+  }
+
+  .footer-links li, 
   .contact-list li {
-    justify-content: center;
+    font-size: 16px !important;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+  }
+
+  .social-col {
+    grid-column: 1 / span 2;
+    margin-top: 10px;
   }
 
   .social-links {
-    justify-content: center;
+    justify-content: flex-start;
+    gap: 25px;
+    margin-bottom: 20px;
+  }
+
+  .social-links i {
+    font-size: 24px;
+  }
+
+  .copyright {
+    text-align: left;
+    font-size: 14px !important;
+    border-top: none;
+    padding-top: 0;
   }
 }
 
