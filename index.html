@@ -554,10 +554,38 @@
     // Mobile Slider Logic
     const slider = document.querySelector('.projects-grid');
     const dots = document.querySelectorAll('.dot');
+    const projectCards = document.querySelectorAll('.project-card');
     
     if (slider && dots.length > 0) {
+      let currentIndex = 0;
+      const totalSlides = dots.length;
+      let slideInterval;
+
+      const updateSliderPosition = () => {
+        slider.scrollTo({
+          left: currentIndex * slider.offsetWidth,
+          behavior: 'smooth'
+        });
+      };
+
+      const nextSlide = () => {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateSliderPosition();
+      };
+
+      const startAutoSlide = () => {
+        if (window.innerWidth <= 768) {
+           slideInterval = setInterval(nextSlide, 3500);
+        }
+      };
+
+      const stopAutoSlide = () => {
+        clearInterval(slideInterval);
+      };
+
       slider.addEventListener('scroll', () => {
         const index = Math.round(slider.scrollLeft / slider.offsetWidth);
+        currentIndex = index;
         dots.forEach((dot, i) => {
           dot.classList.toggle('active', i === index);
         });
@@ -565,11 +593,32 @@
 
       dots.forEach((dot, i) => {
         dot.addEventListener('click', () => {
-          slider.scrollTo({
-            left: i * slider.offsetWidth,
-            behavior: 'smooth'
-          });
+          stopAutoSlide();
+          currentIndex = i;
+          updateSliderPosition();
+          startAutoSlide();
         });
+      });
+      
+      startAutoSlide();
+      
+      slider.addEventListener('touchstart', stopAutoSlide, {passive: true});
+      slider.addEventListener('touchend', startAutoSlide, {passive: true});
+
+      projectCards.forEach(card => {
+        card.addEventListener('click', function() {
+          if (window.innerWidth <= 768) {
+            projectCards.forEach(c => {
+               if (c !== this) c.classList.remove('show-overlay');
+            });
+            this.classList.toggle('show-overlay');
+          }
+        });
+      });
+      
+      window.addEventListener('resize', () => {
+         stopAutoSlide();
+         startAutoSlide();
       });
     }
   </script>
