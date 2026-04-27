@@ -108,7 +108,7 @@ body {
 /* Why Us Area */
 .why-us-area {
   background: #F4F7FB;
-  padding: 80px 79px 100px 79px;
+  padding: 70px 5px 95px 5px;
   /* Left edge padding added */
 }
 
@@ -143,6 +143,8 @@ body {
   height: 7px;
   bottom: -15px;
 }
+
+  /* Removed accidental desktop edit */
 
 .section-subtitle {
   text-align: center;
@@ -540,7 +542,7 @@ body {
 
 .section-subtitle {
   text-align: center;
-  font-size: 20px;
+  font-size: 18px;
   color: var(--text-gray);
   max-width: 700px;
   margin: 0 auto 80px;
@@ -1485,18 +1487,77 @@ body {
   }
 
   .process-area {
-    padding: 60px 40px;
+    padding: 60px 15px;
   }
 
   .process-item {
-    flex-direction: column !important;
+    display: grid !important;
+    grid-template-columns: 1fr 100px;
+    gap: 10px;
     height: auto;
-    padding: 40px 20px;
-    text-align: center;
+    padding: 35px 15px 20px;
+    text-align: left;
+    align-items: center;
+    position: relative;
   }
 
   .process-content {
-    align-items: center !important;
+    display: contents; /* Makes h3 and p direct grid items */
+  }
+
+  .process-item h3 {
+    grid-column: 1 / span 2;
+    font-size: 17px !important;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #333;
+    line-height: 1.3;
+  }
+
+  .process-content p {
+    grid-column: 1;
+    font-size: 17px !important;
+    line-height: 1.4;
+    color: #555;
+    margin: 0;
+  }
+
+  .process-visual {
+    grid-column: 2;
+    width: 100px;
+    height: auto;
+  }
+
+  .process-visual img {
+    width: 100%;
+    height: auto;
+  }
+
+  .process-badge {
+    position: absolute;
+    top: -15px;
+    left: 15px;
+    font-size: 13px;
+    padding: 4px 15px;
+    border-radius: 8px;
+  }
+
+  /* Reverse layout for even items to match Image 1 */
+  .process-item:nth-child(even) {
+    grid-template-columns: 100px 1fr;
+  }
+
+  .process-item:nth-child(even) .process-visual {
+    grid-column: 1;
+  }
+
+  .process-item:nth-child(even) .process-content p {
+    grid-column: 2;
+  }
+
+  .process-item:nth-child(even) .process-badge {
+    left: auto;
+    right: 15px;
   }
 
   .projects-grid {
@@ -1562,6 +1623,7 @@ body {
   .why-us-grid {
     display: flex;
     flex-direction: column;
+    align-items: center; /* Center cards horizontally */
     gap: 50px;
     padding-top: 40px;
     margin-left: 0;
@@ -1569,9 +1631,10 @@ body {
   }
 
   .why-card {
-    width: 345px;
-    padding: 40px 12px 30px;
-    margin-top: 24px;
+    width: 95%; /* Take more width on smaller screens */
+    max-width: 380px; /* Slightly larger as requested */
+    padding: 40px 9px 30px; /* 15px side padding as requested */
+    margin: 24px auto 0;
     border-radius: 15px;
   }
 
@@ -1593,9 +1656,15 @@ body {
   }
 
   .why-card p {
-    font-size: 15px !important;
+    font-size: 17px !important;
     line-height: 1.5;
     color: #444;
+  }
+
+  .why-us-area .section-title::after {
+    width: 393px !important; /* Reduced width as requested for mobile */
+    height: 4px;
+    bottom: -10px;
   }
 
   .onboarding-area {
