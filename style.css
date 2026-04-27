@@ -2031,6 +2031,9 @@ body {
     border-radius: 12px !important;
     border: none !important;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+    position: absolute;
+    z-index: 10;
+    /* Above laptop */
   }
 
   .floating-card-hero .card-icon {
@@ -2057,9 +2060,8 @@ body {
   }
 
   .card-tr {
-    right: -61px;
-    /* Added px */
-    top: -36px;
+    right: -49px;
+    top: -47px;
   }
 
   .card-bl {
@@ -2079,11 +2081,18 @@ body {
     position: relative;
   }
 
+  .laptop-main {
+    position: relative;
+    z-index: 5;
+    /* In front of lines, behind cards */
+  }
+
   .connector-line {
     display: block;
     position: absolute;
     pointer-events: none;
     z-index: -1;
+    /* Back to background */
     background: none !important;
   }
 
