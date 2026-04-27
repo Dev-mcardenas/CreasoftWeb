@@ -804,6 +804,10 @@ body {
   background: #f0f0f0;
 }
 
+.mobile-clone {
+  display: none !important; /* Hide on desktop */
+}
+
 .project-card img {
   width: 100%;
   height: 100%;
@@ -1783,6 +1787,10 @@ body {
     min-width: 100%;
     scroll-snap-align: start;
     aspect-ratio: 1 / 1;
+  }
+
+  .mobile-clone {
+    display: block !important; /* Show only on mobile for loop */
   }
 
   .slider-dots {
