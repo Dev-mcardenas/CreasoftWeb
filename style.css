@@ -1358,6 +1358,83 @@ body {
   }
 }
 
+/* Laptop / Small Desktop Optimization (1025px - 1600px) */
+@media (min-width: 1025px) and (max-width: 1600px) {
+  .container {
+    padding: 0 80px;
+  }
+
+  .hero-left-area {
+    padding: 30px 20px 40px 80px !important;
+    min-height: calc(100vh - 94px);
+    justify-content: flex-start !important;
+    gap: 15px !important;
+  }
+
+  .form-column {
+    padding-right: 80px !important;
+  }
+
+  .layout-grid {
+    grid-template-columns: 1.55fr 1fr !important;
+  }
+
+  .hero-title {
+    font-size: 44px !important;
+  }
+
+  .hero-title .highlight {
+    font-size: 38px !important;
+    padding: 10px 15px !important;
+    margin-top: 8px !important;
+  }
+
+  .hero-copy {
+    font-size: 18px !important;
+    max-width: 95% !important;
+    margin-bottom: 10px !important;
+  }
+
+  .hero-form-card {
+    padding: 20px 25px !important;
+    width: 100% !important;
+    max-width: 440px !important;
+  }
+
+  .hero-form-card h2 {
+    font-size: 20px !important;
+    margin-bottom: 4px !important;
+  }
+
+  .hero-form-card p {
+    font-size: 14px !important;
+    margin-bottom: 15px !important;
+  }
+
+  .form-group {
+    margin-bottom: 10px !important;
+  }
+
+  .hero-form-card input,
+  .hero-form-card select,
+  .hero-form-card textarea {
+    padding: 10px 14px !important;
+    font-size: 14px !important;
+  }
+
+  .btn-submit {
+    padding: 12px !important;
+    font-size: 14px !important;
+    margin-top: 5px !important;
+  }
+
+  .composed-laptop-container {
+    transform: scale(0.85);
+    transform-origin: top left;
+    margin-top: 0 !important;
+  }
+}
+
 /* Tablet Breakpoint (768px) */
 @media (max-width: 768px) {
   .desktop-hidden-image {
