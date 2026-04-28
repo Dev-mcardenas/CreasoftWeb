@@ -390,6 +390,7 @@ body {
   right: -30px;
 }
 
+
 /* Line Positions */
 .line-tl {
   width: 40px;
@@ -545,7 +546,7 @@ body {
   font-size: 18px;
   color: var(--text-gray);
   max-width: 700px;
-  margin: 0 auto 30px;
+  margin: 50px auto 50px;
   line-height: 1.6;
 }
 
@@ -783,8 +784,8 @@ body {
 }
 
 .projects-section .section-title::after {
-  width: 160px;
-  height: 5px;
+  width: 400px;
+  height: 4px;
   bottom: -15px;
 }
 
@@ -1451,7 +1452,7 @@ body {
   }
 
   .section-title {
-    font-size: 24px !important;
+    font-size: 21px !important;
     margin-bottom: 30px;
     text-align: center;
   }
@@ -1662,7 +1663,11 @@ body {
     margin: 24px auto 0;
     border-radius: 15px;
   }
-
+.projects-section .section-title::after {
+    width: 250px;
+    height: 4px;
+    bottom: -15px;
+}
   .why-icon-wrap {
     width: 60px;
     height: 60px;
@@ -1687,7 +1692,7 @@ body {
   }
 
   .why-us-area .section-title::after {
-    width: 335px !important;
+    width: 360px !important;
     /* Reduced width as requested for mobile */
     height: 4px;
     bottom: -10px;
@@ -1707,7 +1712,7 @@ body {
   }
 
   .onboarding-area .section-title::after {
-    width: 140px !important;
+    width: 200px !important;
     /* Shorter line for mobile */
     height: 4px;
     bottom: -10px;
@@ -2058,7 +2063,11 @@ body {
     /* Added px */
     top: -59px;
   }
-
+.process-area .section-title::after {
+    width: 345px;
+    height: 4px;
+    bottom: -15px;
+}
   .card-tr {
     right: -49px;
     top: -47px;
