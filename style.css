@@ -1366,6 +1366,16 @@ body {
     padding: 0 80px;
   }
 
+  .laptop-img {
+    width: 90%;
+    max-width: 930px;
+    height: auto;
+    max-height: 50vh;
+    object-fit: contain;
+    z-index: 1;
+    animation: floatLaptop 5s ease-in-out infinite;
+  }
+
   .hero-left-area {
     padding: 30px 20px 40px 80px !important;
     min-height: calc(100vh - 94px);
@@ -2294,5 +2304,166 @@ body {
     border-radius: 12px !important;
     margin-top: 10px !important;
     text-transform: uppercase !important;
+  }
+}
+
+/* ==========================================
+   EXCLUSIVO TABLET (769px - 1024px)
+   Ajustes para resoluciones como iPad 820x1180
+   ========================================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .layout-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+
+  /* Explicit order for ALL sections in tablet to prevent jumping */
+  .hero-left-area {
+    order: 1 !important;
+    padding: 60px 40px !important;
+    text-align: center !important;
+    min-height: auto !important;
+  }
+
+  .laptop-main {
+    width: 88%;
+    height: auto;
+    display: block;
+  }
+
+  .form-column {
+    order: 2 !important;
+    width: 100% !important;
+    padding: 40px 20px !important;
+    background: var(--yellow) !important;
+  }
+
+  .why-us-area {
+    order: 3 !important;
+  }
+
+  .process-area {
+    order: 4 !important;
+  }
+
+  .onboarding-area {
+    order: 5 !important;
+  }
+
+  .hero-text-content {
+    align-items: center !important;
+  }
+
+  .hero-title {
+    font-size: 65px !important;
+    line-height: 1.1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .hero-title .highlight {
+    font-size: 54px !important;
+    margin-top: 15px !important;
+    width: fit-content !important;
+    padding: 15px 25px !important;
+  }
+
+  .hero-copy {
+    font-size: 32px !important;
+    max-width: 90% !important;
+    margin: 20px auto !important;
+    text-align: center !important;
+    line-height: 1.4 !important;
+  }
+
+  .hero-subcopy {
+    font-size: 30px !important;
+    text-align: center !important;
+    margin: 8px 0 8px !important;
+    width: 100% !important;
+  }
+
+  .hero-form-card {
+    max-width: 650px !important;
+    margin: 0 auto !important;
+    padding: 50px 40px !important;
+    border-radius: 30px !important;
+  }
+
+  .hero-form-card h2 {
+    font-size: 32px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .hero-form-card p {
+    font-size: 22px !important;
+    margin-bottom: 35px !important;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 18px !important;
+    padding: 18px 20px !important;
+  }
+
+  .btn-submit {
+    font-size: 20px !important;
+    padding: 20px !important;
+  }
+
+  .floating-card-hero .card-text span {
+    font-size: 18px !important;
+  }
+
+  .floating-card-hero .card-text small {
+    font-size: 15px !important;
+  }
+
+  .composed-laptop-container {
+    display: block !important;
+    max-width: 80% !important;
+    margin: 60px auto 120px !important;
+  }
+
+  .desktop-hidden-image {
+    display: none !important;
+  }
+
+  .card-tl {
+    top: -70px;
+    left: -95px;
+  }
+
+  .card-tr {
+    top: -15px;
+    right: -100px;
+  }
+
+  .card-bl {
+    bottom: 26px;
+    left: -60px;
+  }
+
+  .line-bl {
+    top: -178%;
+    right: 58px;
+    transform: rotate(0deg);
+  }
+
+  .line-br {
+    width: 93px;
+    top: -139%;
+    left: 11px;
+    transform: rotate(1deg);
+  }
+
+  .card-br {
+    bottom: 33px;
+    right: -38px;
   }
 }
