@@ -266,7 +266,12 @@
             <h2>Solicita una asesoría gratuita</h2>
             <p>Déjanos tus datos y te contactamos en breve</p>
 
-            <form id="contactForm" action="https://formsubmit.co/alejandroloche1234@gmail.com" method="POST">
+            <form id="contactForm" action="https://formsubmit.co/contacto@creasoft.pe" method="POST">
+              <!-- FormSubmit Configuration -->
+              <input type="hidden" name="_subject" value="Nueva Solicitud de Asesoría - Creasoft">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_captcha" value="false">
+
               <div class="form-group">
                 <input type="text" name="nombre" placeholder="Nombres y apellidos" required id="name" maxlength="50"
                   pattern="^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+$" title="Solo se permiten letras y espacios" />
@@ -285,10 +290,10 @@
               <div class="form-group">
                 <select name="presupuesto" required id="budget">
                   <option value="" selected disabled>Selecciona tu presupuesto</option>
-                  <option value="1">S/ 5,000 - S/ 10,000</option>
-                  <option value="2">S/ 10,000 - S/ 25,000</option>
-                  <option value="3">S/ 25,000 - S/ 50,000</option>
-                  <option value="4">Más de S/ 50,000</option>
+                  <option value="S/ 5,000 - S/ 10,000">S/ 5,000 - S/ 10,000</option>
+                  <option value="S/ 10,000 - S/ 25,000">S/ 10,000 - S/ 25,000</option>
+                  <option value="S/ 25,000 - S/ 50,000">S/ 25,000 - S/ 50,000</option>
+                  <option value="Más de S/ 50,000">Más de S/ 50,000</option>
                 </select>
               </div>
 
