@@ -294,8 +294,11 @@
             <h2>Solicita una asesoría gratuita</h2>
             <p>Déjanos tus datos y te contactamos en breve</p>
 
-            <form id="contactForm" action="enviar_correo.php" method="POST">
-              <!-- Custom PHP Form Integration -->
+            <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+              <!-- Web3Forms Integration -->
+              <input type="hidden" name="access_key" value="3673f0ba-bbdd-4f90-9692-c24ea3c53dc2">
+              <input type="hidden" name="subject" value="Nueva Solicitud de Asesoría - Creasoft">
+              <input type="hidden" name="from_name" value="Web Creasoft">
               <div class="form-group">
                 <input type="text" name="nombre" placeholder="Nombres y apellidos" required id="name" maxlength="50"
                   pattern="^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+$" title="Solo se permiten letras y espacios" />
@@ -581,8 +584,8 @@
       })
       .then(response => response.json())
       .then(data => {
-        if(data.status === 'success') {
-          alert(data.message);
+        if(data.success) {
+          alert("¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.");
           form.reset();
         } else {
           alert(data.message || 'Error al enviar el mensaje.');
