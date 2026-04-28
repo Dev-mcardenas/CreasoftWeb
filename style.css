@@ -1083,8 +1083,8 @@ body {
 }
 
 .card-title {
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 400;
   color: #2D2D2D;
   line-height: 1.2;
 }
@@ -1719,10 +1719,10 @@ body {
   }
 
   .card-title {
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 13px !important;
+    font-weight: 400 !important;
     color: #2D2D2D;
-    line-height: 1.2;
+    line-height: 1.1 !important;
   }
 
   .hero-copy {
@@ -2054,7 +2054,7 @@ body {
     bottom: 22;
     left: 22%;
     transform: translateX(-50%);
-    width: 56%;
+    width: 65%;
   }
 
   .footer-grid {
@@ -2155,6 +2155,16 @@ body {
   .floating-card-hero .card-text small {
     font-size: 13px !important;
     color: #666;
+  }
+
+  /* Idea Section Manual Cards Mobile Spacing */
+  .floating-card-manual .card-text {
+    line-height: 1.1 !important;
+  }
+
+  .floating-card-manual .card-title {
+    font-size: 13px !important;
+    line-height: 1.1 !important;
   }
 
   /* Reduce negative margins further to prevent screen overflow */
