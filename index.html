@@ -20,7 +20,7 @@
   <meta property="og:title" content="Creasoft - Impulsa tu Empresa con Software a Medida" />
   <meta property="og:description"
     content="Desde 2009, diseñamos e implementamos software a medida para empresas en Perú. +25 empresas confían en nosotros. Solicita tu asesoría gratuita." />
-  <meta property="og:image" content="https://creasoft.pe/img/logo_creasoft_white.png" />
+  <meta property="og:image" content="https://creasoft.pe/img/creasoft.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:url" content="https://creasoft.pe" />
@@ -32,6 +32,33 @@
   <meta name="twitter:description"
     content="Desde 2009, diseñamos e implementamos software a medida para empresas en Perú. +25 empresas confían en nosotros." />
   <meta name="twitter:image" content="https://creasoft.pe/img/logo_creasoft_white.png" />
+
+  <!-- Structured Data (JSON-LD) - Senior SEO Practice -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareCompany",
+    "name": "Creasoft",
+    "url": "https://creasoft.pe",
+    "logo": "https://creasoft.pe/img/creasoft.png",
+    "description": "Desde 2009, Creasoft diseña e implementamos software a medida para empresas en Perú.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Lima",
+      "addressCountry": "PE"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+51 927202015",
+      "contactType": "sales",
+      "email": "contacto@creasoft.pe"
+    },
+    "sameAs": [
+      "https://www.facebook.com/creasoft.pe",
+      "https://www.linkedin.com/company/creasoft-peru"
+    ]
+  }
+  </script>
 
   <link href="https://fonts.cdnfonts.com/css/neo-sans-pro" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
@@ -96,7 +123,7 @@
             </div>
 
             <div class="floating-card-hero card-tr">
-              <div class="card-icon" ><img src="img/impulsa_empresa/tecnologias.svg" alt="" /></div>
+              <div class="card-icon"><img src="img/impulsa_empresa/tecnologias.svg" alt="" /></div>
               <div class="card-text"><span>Tecnologías</span><br><small>modernas y escalables</small></div>
               <div class="connector-line line-tr">
                 <img src="img/impulsa_empresa/superior_derecho.svg" alt="" />
@@ -302,13 +329,15 @@
               <!-- Sin redirecciones, todo se procesa en la misma página -->
               <div class="form-group">
                 <input type="text" name="nombre" placeholder="Nombres y apellidos" required id="name" maxlength="50"
-                  pattern="^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+$" title="Solo se permiten letras y espacios" />
+                  pattern="^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+$" title="Solo se permiten letras y espacios"
+                  aria-label="Nombres y apellidos" />
               </div>
               <div class="form-group">
                 <input type="text" name="empresa" placeholder="Empresa" required id="company" maxlength="60" />
               </div>
               <div class="form-group">
-                <input type="email" name="email" placeholder="Correo electrónico" required id="email" maxlength="100" />
+                <input type="email" name="email" placeholder="Correo electrónico" required id="email" maxlength="100"
+                  aria-label="Correo electrónico" />
               </div>
               <div class="form-group">
                 <input type="tel" name="telefono" placeholder="Número de celular" required id="phone" maxlength="15"
