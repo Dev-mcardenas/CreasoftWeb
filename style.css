@@ -1418,7 +1418,7 @@ body {
   }
 
   .layout-grid {
-    grid-template-columns: -0.45fr 1fr !important;
+    grid-template-columns: 1.5fr 1fr !important;
   }
 
   .hero-title {
