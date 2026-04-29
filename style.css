@@ -109,7 +109,7 @@ body {
 .sticky-wrapper {
   position: sticky;
   top: 40px;
-  padding: 2.5rem 0.25rem 0rem 3rem;
+  padding: 2.5rem 0.25rem 3rem 3rem;
   display: flex;
   justify-content: center;
 }
